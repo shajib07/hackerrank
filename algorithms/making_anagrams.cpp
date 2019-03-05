@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 	
-  int ans = 0;
+  	int ans = 0;
 	int count[MAX] = {0};
 	string s1, s2;
 	cin >> s1 >> s2;
