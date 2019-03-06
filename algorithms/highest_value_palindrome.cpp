@@ -1,29 +1,33 @@
 /*
+
  * highest_val_palidrome.cpp
  *
  *  Created on: Mar 6, 2019
  *      Author: atahar
- */
+*/
 #include <cstring>
 #include <iostream>
 #include <bits/stdc++.h>
 #include <cmath>
 using namespace std;
 
+#define MAX 26
+
+
 int main() {
 
-	int n, l;
+	long n, l;
 	string s;
 	cin >> l >> n;
 	cin >> s;
-	int c = 0;
+	unsigned long long int c = 0;
 
 	string s1 = s.substr(0, s.length()/2);
 	string s2 = s.substr(s.length()/2, s.length());
 	reverse(s2.begin(), s2.end());
-	int a1[s1.length()] = {0}, a2[s1.length()] = {0};
+	unsigned long long int a1[s1.length()] = {0}, a2[s1.length()] = {0};
 
-	for(unsigned i = 0; i < s1.length(); i++) {
+	for(unsigned long long int i = 0; i < s1.length(); i++) {
 		if (s1[i] != s2[i]) {
 			c++;
 			int a = s1[i] - '0';
@@ -47,9 +51,10 @@ int main() {
 		s2[s2.length()-1] = '9';
 	}
 
-	for(unsigned i = 0; i < s1.length(); i++) {
+	for(unsigned long long int i = 0; i < s1.length(); i++) {
 		if (c >= n) break;
 
+		if (s1[i] == '9') continue;
 		if (a1[i] == 0) c++;
 		if (a2[i] == 0) c++;
 		s1[i] = '9';
