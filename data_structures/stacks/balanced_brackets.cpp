@@ -7,15 +7,12 @@ using namespace std;
 void isBalanced(string s) {
 
     stack<char> st;
-
+    
     for (int i = 0; i < s.length(); i++) {
-
         switch(s[i]) {
-
             case '[':
             case '{':
             case '(':
-//                cout << "push to stack " << s[i] <<endl;
                 st.push(s[i]);
                 break;
             case ']':
@@ -25,7 +22,6 @@ void isBalanced(string s) {
                 }
                 st.pop();
                 break;
-
             case '}':
                 if (st.empty() || st.top() != '{') {
                     cout << "NO" << endl;
@@ -33,7 +29,6 @@ void isBalanced(string s) {
                 }
                 st.pop();
                 break;
-
             case ')':
                 if (st.empty() || st.top() != '(') {
                     cout << "NO" << endl;
@@ -49,10 +44,9 @@ void isBalanced(string s) {
     } else {
         cout << "NO"<<endl;
     }
-
 }
-int main() {
 
+int main() {
     int n;
     cin >> n;
     string str[n];
@@ -62,7 +56,6 @@ int main() {
 
     for (int l = 0; l < n; l++) {
         isBalanced(str[l]);
-
     }
     return 0;
 }
